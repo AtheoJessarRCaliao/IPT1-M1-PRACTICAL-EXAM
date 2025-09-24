@@ -9,20 +9,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SB Admin 2 - Student</title>
 
-    <!-- Custom fonts for this template-->
-    <!-- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Google Fonts -->
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- SB Admin 2 CSS -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    
-    <script>
-        
-    </script>
 
 </head>
 
@@ -45,25 +40,23 @@
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
+            <!-- Nav Item - Subject -->
             <li class="nav-item">
                 <a class="nav-link" href="subject.html">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <i class="fas fa-fw fa-book"></i>
                     <span>Subject</span></a>
             </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-
-            <!-- Nav Item - Tables -->
+            <!-- Nav Item - Student -->
             <li class="nav-item active">
                 <a class="nav-link" href="student.html">
-                    <i class="fas fa-fw fa-table"></i>
+                    <i class="fas fa-fw fa-user-graduate"></i>
                     <span>Student</span></a>
             </li>
 
-            
         </ul>
         <!-- End of Sidebar -->
 
@@ -73,61 +66,56 @@
             <!-- Main Content -->
             <div id="content">
 
-                
                 <!-- Begin Page Content -->
-                <div class="container-fluid  mt-3">
-                    <form class="g-3" id="studentForm">
-                        <div class="row">
-                            <div class="col-md-3">
-                                <label for="idNumber" class="form-label">ID Number</label>
-                                <input type="text" class="form-control" id="idNumber">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="firstName" class="form-label">Firstname</label>
-                                <input type="text" class="form-control" id="firstName">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="middleName" class="form-label">Middle Name</label>
-                                <input type="text" class="form-control" id="middleName">
-                            </div>
-                            <div class="col-md-3">
-                                <label for="lastName" class="form-label">Lastname</label>
-                                <input type="text" class="form-control" id="lastName">
-                            </div>
+                <div class="container-fluid mt-3">
+
+                    <!-- Student Form -->
+                    <form id="studentForm" class="row g-3">
+                        <div class="col-md-3">
+                            <label for="studentId" class="form-label">ID Number</label>
+                            <input type="text" class="form-control" id="studentId" required>
                         </div>
-                    <div class="row">
-                        <div class="col-md-12 d-flex justify-content-end mt-2">
-                            <button type="button" class="btn btn-primary" id="addStudentButton">Add Student</button>
+                        <div class="col-md-3">
+                            <label for="firstname" class="form-label">Firstname</label>
+                            <input type="text" class="form-control" id="firstname" required>
                         </div>
-                    </div>
+                        <div class="col-md-3">
+                            <label for="middlename" class="form-label">Middlename</label>
+                            <input type="text" class="form-control" id="middlename">
+                        </div>
+                        <div class="col-md-3">
+                            <label for="lastname" class="form-label">Lastname</label>
+                            <input type="text" class="form-control" id="lastname" required>
+                        </div>
+
+                        <div class="col-12 d-flex justify-content-end mt-3">
+                            <button type="button" class="btn btn-primary" id="addStudentBtn">Add Student</button>
+                        </div>
                     </form>
-                    <br>
-                    <br>
-                    <div class="row">
-                        <table class="table table-striped" id="">
-                            <tbody>
-                                <thead>
+
+                    <!-- Student Table -->
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <table class="table table-striped">
+                                <thead class="table-primary">
                                     <tr>
                                         <th>ID Number</th>
                                         <th>Firstname</th>
-                                        <th>Middle Name</th>
+                                        <th>Middlename</th>
                                         <th>Lastname</th>
-                                        
                                     </tr>
                                 </thead>
-                                <tbody id="table-content">
-                                    
-                                </tbody>
-                            </tbody>
-                        </table>
+                                <tbody id="studentTableBody"></tbody>
+                            </table>
+                        </div>
                     </div>
+
                 </div>
                 <!-- /.container-fluid -->
 
             </div>
             <!-- End of Main Content -->
 
-           
         </div>
         <!-- End of Content Wrapper -->
 
@@ -140,8 +128,7 @@
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    
-
+    <!-- Custom JS -->
     <script src="js/app.js"></script>
 
 </body>
